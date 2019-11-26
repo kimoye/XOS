@@ -9,9 +9,9 @@
 - 旨在兴趣和乐趣
 ## 参考课程/书目
 - 清华大学的操作系统课程
-  - ucore主分支
-  - ucore lab实验指导书
-  
+  - [ucore主分支](https://github.com/chyyuu/ucore_os_docs)
+  - [ucore lab实验指导书](https://chyyuu.gitbooks.io/ucore_os_docs/content/)
+  - [清华大学OS课程主站](http://os.cs.tsinghua.edu.cn/oscourse/OS2018spring/)
 以上分支在GitHub输入关键字即可找到
 ## To Do List
 - 0 搭建环境(刚开始不需要十分理解，照做即可模拟出一台上个世纪的最简单计算机)
