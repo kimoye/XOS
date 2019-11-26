@@ -12,7 +12,8 @@
   - [ucore主分支](https://github.com/chyyuu/ucore_os_docs)
   - [ucore lab实验指导书](https://chyyuu.gitbooks.io/ucore_os_docs/content/)
   - [清华大学OS课程主站](http://os.cs.tsinghua.edu.cn/oscourse/OS2018spring/)
-以上分支在GitHub输入关键字即可找到
+
+以上分支在GitHub输入关键字即可找到更多信息
 ## To Do List
 - 0 搭建环境(刚开始不需要十分理解，照做即可模拟出一台上个世纪的最简单计算机)
   - 编写操作系统不同于编写普通的应用程序。本项目中应用ucore中的工作环境:
