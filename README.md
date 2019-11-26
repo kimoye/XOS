@@ -1,4 +1,4 @@
-# XOS
+# XOS：X Operate System
 
 ![Lisence](https://img.shields.io/badge/License-GPL-green)
 ![Author0](https://img.shields.io/badge/Author-kimoye-red)
