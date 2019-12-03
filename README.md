@@ -24,7 +24,7 @@
     - 让Lynn和Max熟悉整个过程都需要用到的工具和环境
     - 体会乐趣
 ## 详细教程
-- 0 环境搭建：Ubuntu+Qemu
+- 0 [环境搭建：Ubuntu+Qemu](https://github.com/kimoye/XOS/blob/master/lab1/qemu.md)
   - 0.1 这一步网上的教程多如牛毛，但是需要注意几点：
     - 在Ubuntu下启动Qemu的命令为：qemu-system-i386,然后加上具体参数。
     - 建议在本小节的学习顺序为：先写启动代码-->学习如何生成启动扇区-->学习如何用Qemu+gdb调试
