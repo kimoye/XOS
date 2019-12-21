@@ -5,13 +5,13 @@ clear = 4000                        ##  见上
 
 .code16                             ##  .code16 表示生成 16 位的机器码，这条指令在寻址的时候有用，此处可以略去。
 cli                                 ##  禁止中断
-mov %cs,%ax			# 习惯操作，重置段寄存器
-mov %ax,%ds         # 习惯操作，重置段寄存器
-mov 0x4000, %ax		# the physical address loaded by the bootloader
-mov %ax, %ss
-xor %sp,%sp			# 清除屏幕
-call _boot          # 调用_boot
-ret                 # 调用完返回
+mov %cs,%ax							# 习惯操作，重置段寄存器
+mov %ax,%ds         				# 习惯操作，重置段寄存器
+mov 0x4000, %ax						# the physical address loaded by the bootloader
+mov %ax, %ss				
+xor %sp,%sp							# 清除屏幕
+call _boot          				# 调用_boot
+ret                 				# 调用完返回
 _boot:
 	cld					# 清除标志寄存器
 	mov $vga_sec,%bx
