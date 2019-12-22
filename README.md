@@ -34,4 +34,4 @@
     - 代码中附有注释，阅读代码前应该先阅读清华实验书里面的相关细节。
   - 0.3 进入保护模式
     - makefile已经写好，make，make run即可直接运行。win10下使用wsl体验更顺滑。
-    ![avatar](./lab1/pic/1.png)
+    ![avatar](https://github.com/kimoye/XOS/blob/master/lab1/pic/1.png)
