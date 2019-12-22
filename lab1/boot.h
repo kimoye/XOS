@@ -1,5 +1,5 @@
-#ifndef _BOOT_H
-#define _BOOT_H
+#ifndef __BOOT_H__
+#define __BOOT_H__
 
 #define SEG_NULL                            \
     .word 0, 0;                             \
