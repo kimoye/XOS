@@ -49,7 +49,7 @@ protcseg:
     movw %ax, %gs                                   # -> GS:
     movw %ax, %ss                                   # -> SS: Stack Segment
 
-    # Set up the stack pointer and call into C. The stack region is from 0--start(0x7c00)
+    #设置栈指针， 进入C语言. The stack region is from 0--start(0x7c00)
     movl $0x0, %ebp
     movl $start, %esp
 
@@ -58,9 +58,9 @@ disp:
   call puts
   jmp  c_boot
 
-# Print a line of string to screen.
-# Parameter:
-# %edi: address of NUL-terminated string that is to be printed.
+# 打印字符串到屏幕
+# 参数:
+# %edi: 待打印字符的起始地址
 puts:
   call clear
   xorl %ecx, %ecx
