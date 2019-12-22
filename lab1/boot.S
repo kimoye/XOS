@@ -1,7 +1,7 @@
 #include "boot.h"
 
-vga_addr = 0xb8000
-vga_nber = 0x4000
+cga_addr = 0xb8000
+cga_nber = 0x4000
 PROT_MODE_CSEG = 0x8
 PROT_MODE_DSEG = 0x10
 
@@ -53,43 +53,45 @@ protcseg:
     movl $0x0, %ebp
     movl $start, %esp
 
-disp:
-  movl $msg, %edi
-  call puts
-  jmp  c_boot
+cga_disp:
+	cld
+	call cga_clr
+	movw $msg,%si
+  	movb $0x7,%ah
+	movl $cga_addr,%edx						
+  	call cga_puts
+  	jmp  c_call
 
 # 打印字符串到屏幕
 # 参数:
-# %edi: 待打印字符的起始地址
-puts:
-  call clear
-  xorl %ecx, %ecx
-puts.0:
-  movb (%edi,%ecx), %dl
-  test %dl, %dl
-  jz   puts.1
-  movb $0xf, %dh
-  movw %dx, (%ebx,%ecx,2)
-  incl %ecx
-  jmp  puts.0
-puts.1:
-  ret
+# %si: 待打印字符的起始地址
+cga_puts:
+  	lodsb
+  	or 	 %al,%al
+  	jz   cga_puts.1
+  	movw %ax,%es:986(,%edx,1)						#986（偶数）意味这字符串显示的行数大约是正中间那行，我图吉利用这个数字
+  	incl %edx
+	incl %edx
+  	jmp  cga_puts
+cga_puts.1:
+  	ret
 
-# Clear screen.
-clear:
-  xorl %ecx, %ecx
-  movl $0xb8000, %ebx
-clear.0:
-  movl $0x0f200f20, (%ebx,%ecx,4)
-  incl %ecx
-  cmpl $1000, %ecx
-  jl   clear.0
-  ret
-c_boot:
+
+#------------------Clear screen function----------------#
+cga_clr:
+	movl $cga_addr,%edi
+	movw $0x0000,%ax
+	movw $cga_nber,%cx
+  	rep stosb
+	ret
+
+#------------------C语言入口----------------------------#
+c_call:
 	jmp .
+
 #------------------指令无关域---------------------------#
 msg:
-.asciz	"Welcome to XOS(protect mode)!"
+.asciz	"Welcome to XOS: in protect mode!"
 
 .p2align 2
 gdt:
