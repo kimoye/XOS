@@ -32,3 +32,6 @@
     - 本小节中需用到的qemu/gdb命令和解释等见lab1/qemu.md
   - 0.2 启动扇区代码编写(代码见lab1/boot.s)
     - 代码中附有注释，阅读代码前应该先阅读清华实验书里面的相关细节。
+  - 0.3 进入保护模式
+    - makefile已经写好，make，make run即可直接运行。win10下使用wsl体验更顺滑。
+    ![avatar](./lab1/pic/1.png)
